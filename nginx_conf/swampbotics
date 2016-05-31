@@ -1,0 +1,35 @@
+
+server {
+    listen 80;
+    server_name swampbotics.dev.mureedsultan.com;
+    index index.php index.html;
+    autoindex on;
+    root "/var/www/swampbotics/";
+
+    location ~*  \.(jpg|jpeg|png|gif|ico|css|js|svg)$ {
+      expires 1w;
+     }
+
+    location / {
+        try_files $uri $uri/ =404;
+        if (-f $document_root$uri.html) {
+            rewrite ^(.*)$ /$uri.html;
+        }
+        if (-f $document_root$uri.php) {
+            rewrite ^(.*)$ /$uri.php;
+        }
+		rewrite ^/events/([^/]*)$ /events.php?year=$1 last;
+		rewrite ^/events/([^/]*)$ /events.php?year=$1 last;
+		rewrite ^/event/([^/]*)/([^/]*)$ /post.php?year=$1&post=$2 last;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_read_timeout 3000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
