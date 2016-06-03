@@ -1,5 +1,9 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/../config.php';
+
+global $CONFIG;
+
 final class Db
 {
     /**
@@ -13,7 +17,13 @@ final class Db
      */
     public function __construct()
     {
-        $this->connection = new \mysqli("localhost", "swampbotics", "RdPtqas93QMdn344", "swampbotics");
+        global $CONFIG;
+        $this->connection = new \mysqli(
+            $CONFIG['database']['host'],
+            $CONFIG['database']['username'],
+            $CONFIG['database']['password'],
+            $CONFIG['database']['name']
+        );
         if ($this->connection->connect_errno) {
             $this->handleError('Connection', $this->connection->connect_errno, $this->connection->connect_error);
         } else {
@@ -52,7 +62,7 @@ final class Db
                 );
                 $args_ref = array();
                 foreach ($args as $k => &$arg) {
-                        $args_ref[$k] = &$arg;
+                    $args_ref[$k] = &$arg;
                 }
                 if (!call_user_func_array(array($query, 'bind_param'), $args_ref)) {
                     $this->handleError('Binding parameters');
@@ -84,7 +94,6 @@ final class Db
 
             $query->close();
             return $result;
-
         } else {
             $this->handleError('Preparing query');
         }
@@ -97,10 +106,10 @@ final class Db
     private function handleError($action, $number = -1, $text = '')
     {
         if ($number === -1) {
-            echo $action . ' failed: (' . $this->connection->errno . ') ' . $this->connection->error, "Database Error";
+            echo $action . ' failed: (' . $this->connection->errno . ') ' . $this->connection->error. '. Please use the Back button to return to the previous page and correct your input. If the problem persists, please contact the hostmaster.';
             exit;
         } else {
-            echo $action . ' failed: (' . $number . ') ' . $text, "Database Error";
+            echo $action . ' failed: (' . $number . ') ' . $text. '. Please use the Back button to return to the previous page and correct your input. If the problem persists, please contact the hostmaster.';
             exit;
         }
     }
