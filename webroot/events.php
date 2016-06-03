@@ -12,8 +12,8 @@ $thisPage->canonical = '';
 $thisPage->description = '';
 
 $year = date('Y-m-d');
-if(isset($_GET['year'])){
-  $year = date('Y-m-d', mktime(0, 0, 0, 12, 31, $year));
+if (isset($_GET['year'])) {
+    $year = date('Y-m-d', mktime(0, 0, 0, 12, 31, $year));
 }
 
 $db = new Db();
