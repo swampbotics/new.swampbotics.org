@@ -78,7 +78,7 @@ final class Page
     public function output()
     {
         $thisoutput = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/global.html');
-        switch($this->navType){
+        switch ($this->navType) {
           case 'default':
             $navClass = 'navbar navbar-default ripple-group-parent';
             $navWrapper = 'sticky-navbar';
@@ -94,34 +94,34 @@ final class Page
         }
         $thisoutput = str_replace('{head}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/head.html'), $thisoutput);
         $thisoutput = str_replace('{meta}', $this->meta, $thisoutput);
-        if(!empty($this->autoContent)){
-          $thisoutput = str_replace('{header}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/headers/'.$this->autoContent.'.html'), $thisoutput);
-          $thisoutput = str_replace('{content}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/'.$this->autoContent.'.html'), $thisoutput);
-        }else{
-          $thisoutput = str_replace('{header}', $this->header, $thisoutput);
-          $thisoutput = str_replace('{content}', $this->content, $thisoutput);
+        if (!empty($this->autoContent)) {
+            $thisoutput = str_replace('{header}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/headers/'.$this->autoContent.'.html'), $thisoutput);
+            $thisoutput = str_replace('{content}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/'.$this->autoContent.'.html'), $thisoutput);
+        } else {
+            $thisoutput = str_replace('{header}', $this->header, $thisoutput);
+            $thisoutput = str_replace('{content}', $this->content, $thisoutput);
         }
         $thisoutput = str_replace('{content-hidden}', $this->contentHidden, $thisoutput);
         $thisoutput = str_replace('{title}', $this->title, $thisoutput);
         $thisoutput = str_replace('{canonical}', $this->canonical, $thisoutput);
         $thisoutput = str_replace('{description}', $this->description, $thisoutput);
-        if($this->nav){
-          $thisoutput = str_replace('{nav}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/nav.html'), $thisoutput);
-          $thisoutput = str_replace('{nav-class}', $navClass, $thisoutput);
-          $thisoutput = str_replace('{nav-wrapper}', $navWrapper, $thisoutput);
+        if ($this->nav) {
+            $thisoutput = str_replace('{nav}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/nav.html'), $thisoutput);
+            $thisoutput = str_replace('{nav-class}', $navClass, $thisoutput);
+            $thisoutput = str_replace('{nav-wrapper}', $navWrapper, $thisoutput);
         } else {
-          $thisoutput = str_replace('{nav}', '', $thisoutput);
+            $thisoutput = str_replace('{nav}', '', $thisoutput);
         }
-        if($this->footer){
-          $thisoutput = str_replace('{footer}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/footer.html'), $thisoutput);
+        if ($this->footer) {
+            $thisoutput = str_replace('{footer}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/footer.html'), $thisoutput);
         } else {
-          $thisoutput = str_replace('{footer}', '', $thisoutput);
+            $thisoutput = str_replace('{footer}', '', $thisoutput);
         }
         $thisoutput = str_replace('{scripts}', file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/includes/scripts.html'), $thisoutput);
-        if($this->title == "Home"){
-          $thisoutput = str_replace('{nav-js}', "<script>$('.navbar-page').hide().remove();</script>", $thisoutput);
+        if ($this->title == "Home") {
+            $thisoutput = str_replace('{nav-js}', "<script>$('.navbar-page').hide().remove();</script>", $thisoutput);
         } else {
-          $thisoutput = str_replace('{nav-js}', "<script>$('.navbar-index').hide().remove();</script>", $thisoutput);
+            $thisoutput = str_replace('{nav-js}', "<script>$('.navbar-index').hide().remove();</script>", $thisoutput);
         }
         $thisoutput = str_replace('{js}', $this->js, $thisoutput);
         echo $thisoutput;
