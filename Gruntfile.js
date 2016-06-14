@@ -7,14 +7,14 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'webroot/assets/custom/css/custom.css': 'webroot/assets/custom/css/custom.sass'
+                    'webroot/assets/css/custom/custom.css': 'webroot/assets/css/custom/custom.sass'
                 }
             }
         },
         autoprefixer: {
             dist: {
                 files: {
-                    'webroot/assets/custom/css/custom.css': 'webroot/assets/custom/css/custom.css'
+                    'webroot/assets/css/custom/custom.css': 'webroot/assets/css/custom/custom.css'
                 }
             }
         },

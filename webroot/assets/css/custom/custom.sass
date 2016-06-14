@@ -1,34 +1,57 @@
-@import "bourbon/bourbon"
-@import "includes/fonts.sass"
+@import 'bourbon/bourbon'
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900%7COpen+Sans:300,400,600,700)
 
 .kaushan
-  font-family: 'Kaushan Script', cursive
+    font-family: 'Kaushan Script'
+
+.footer-bottom
+    p
+        display: block
+        margin: 0px
+        &:nth-child(2)
+            padding: 0px
+    a
+        border-bottom: none
+        color: rgba(#d3af07, 0.6)
+        &:hover
+            border-bottom: none
+
 
 .footer-logo
-  width: 100%
-  text-align: center
+    width: 100%
+    text-align: center
 
 .logo-hover
-  user-drag: none
-  &.footer
-    display: inline-block
-  .logo-borders-inner
-    +transform(rotate(0deg))
-    +transition(all 0.5s ease-in-out)
-  .logo-borders-outer
-    +transform(rotate(0deg))
-    +transition(all 0.5s ease-in-out)
-  &:hover
+    height: 250px
+    margin-bottom: 25px
+    user-drag: none
+    &:hover
+        .logo-borders-inner
+            +transform(rotate(90deg))
+            +transition(all .5s ease-in-out)
+        .logo-borders-outer
+            +transform(rotate(-90deg))
+            +transition(all .5s ease-in-out)
+
+    &.footer
+        height: 200px
+        width: 200px
+        margin: 0 auto
+        margin-bottom: 25px
+        img
+            width: 200px
+            height: 200px
+    img
+        position: absolute
+        right: 0
+        left: 0
+        width: 250px
+        height: 250px
+        margin: 0 auto
+
     .logo-borders-inner
-      +transform(rotate(90deg))
-      +transition(all 0.5s ease-in-out)
+        +transform(rotate(0deg))
+        +transition(all .5s ease-in-out)
     .logo-borders-outer
-      +transform(rotate(-90deg))
-      +transition(all 0.5s ease-in-out)
-
-//.logo-borders-inner
-  &:hover
-
-//.logo-gator
-  &:hover
+        +transform(rotate(0deg))
+        +transition(all .5s ease-in-out)

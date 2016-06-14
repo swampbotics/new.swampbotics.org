@@ -1,68 +1,24 @@
 <section id="home-section" class="home-section full-screen">
-  <div class=" zoom-hero full-screen" data-top="transform: scale3d(1,1,1)" data-top-bottom="transform: scale3d(.75,.75,1)" data-anchor-target="#home-section">
-    <!-- Avilable classes: show-indicators || single-loadbar || alltogether-loadbars -->
-    <!--
-        you have to define data-background-0 ... data-background-n (n = number of your slides) on #animate-slider if you want to have a different background fo each slide!
-        data-background-0="assets/img/01.jpg" data-background-1="assets/img/02.jpg" data-background-2="assets/img/03.jpg"
-
-    -->
-    <div id="animate-slider" class="animate-slider alltogether-loadbars carousel dots-over as-overlay in-page-scroll" data-background-0="assets/img/slides/biohazard.jpg" data-background-1="assets/img/backgrounds/home-bg-24.jpg" data-background-2="assets/img/backgrounds/home-bg-63.jpg">
-      <div class="slide hs-content">
-        <div class="hs-content-inner">
-          <div class="logo-hover" data-effect-in="foldUp" data-effect-out="foldOut">
-            <img class="logo-gator" src="assets/img/logos/logo-gator.svg" style="width: 250px; position: absolute; margin-bottom: 25px;">
-            <img class="logo-borders-inner" src="assets/img/logos/logo-borders-inner.svg" style="width: 250px; position: absolute; margin-bottom: 25px">
-            <img class="logo-borders-outer" src="assets/img/logos/logo-borders-outer.svg" style="width: 250px; margin-bottom: 25px">
-          </div>
-          <div class="delay0-1s" data-effect-in="foldUp" data-effect-out="foldOut">
-            <h1 class="hs-text-4-head font-second kaushan">Swampbotics</h1>
-          </div>
-          <div class=" margin-top-10 padding-top-10" data-effect-in="zoomIn" data-effect-out="fadeOutUp">
-            <p class="hs-text-6 font-second">VEX Robotics Team 2105</p>
-          </div>
+    <div class="video-background parallax-hero full-screen overlay" data-vide-bg="mp4: assets/video/bot/main, webm: assets/video/bot/main, poster: assets/video/bot/main" data-vide-options="position: 50% 50%" data-top="transform: translate3d(0px, 0px, 0px)"
+        data-top-bottom="transform: translate3d(0px, -300px, 0px)" data-anchor-target="#home-section">
+        <div class="hs-content">
+            <div class="hs-content-inner">
+                <div id="particles-js" class="particles-js"></div>
+                <div class="logo-hover" data-effect-in="foldUp" data-effect-out="foldOut">
+                    <img class="logo-gator" src="assets/img/logos/logo-gator.svg">
+                    <img class="logo-borders-inner" src="assets/img/logos/logo-borders-inner.svg">
+                    <img class="logo-borders-outer" src="assets/img/logos/logo-borders-outer.svg">
+                </div>
+                <div class="delay0-1s" data-effect-in="foldUp" data-effect-out="foldOut">
+                    <h1 class="hs-text-4-head font-second kaushan">Swampbotics</h1>
+                </div>
+                <div class="margin-top-10 padding-top-10" data-effect-in="zoomIn" data-effect-out="fadeOutUp">
+                    <p class="hs-text-6 font-second">VEX Robotics Team 2105</p>
+                </div>
+            </div>
+            <span class="scroll-down-arrow in-page-scroll" data-start="display: inline-block" data-100-start="display: none">
+                <a href="#about-section" class="ci-icon-uniE930 init-animation-2 delay1-8s"></a>
+            </span>
         </div>
-      </div>
-      <div class="slide hs-content">
-        <div class="hs-content-inner">
-          <div class="margin-bottom-30" data-effect-in="fadeInUp" data-effect-out="fadeOutDown">
-            <h1 class="hs-text-4-head font-second"></h1>
-          </div>
-          <div class=" margin-top-10 padding-top-10" data-effect-in="zoomIn" data-effect-out="fadeOutUp">
-            <p class="hs-text-6 font-second"></p>
-          </div>
-        </div>
-      </div>
-      <div class="slide hs-content">
-        <div class="hs-content-inner">
-          <div class="delay0-1s" data-effect-in="fadeInUp" data-effect-out="zoomOut">
-            <h1 class="hs-text-4 font-second">feel the freedom yourself</h1>
-          </div>
-          <div class="delay0-2s margin-bottom-30 margin-bottom-xs-20" data-effect-in="fadeInUp" data-effect-out="zoomOut">
-            <h1 class="hs-text-4 font-second">Words are not feelings</h1>
-          </div>
-          <div class="delay0-3s padding-bottom-30 padding-bottom-xs-20" data-effect-in="fadeInUp" data-effect-out="zoomOut">
-            <p class="hs-text-detail">elegent, smooth, lightweight</p>
-          </div>
-          <div class="delay0-4s margin-top-sm-40" data-effect-in="fadeInUp" data-effect-out="zoomOut">
-            <a href="#about-section" class="btn btn-animated btn-split btn-transparent-white ripple-alone" data-text="see our works">
-              <span>see our works</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--/ .slide -->
-      <!--
-      <div class="as-nav-arrows">
-        <a class="carousel-control as-arrow left" href="#." data-target="prev">
-          <span class="icon ion-ios7-arrow-left arrow-left"></span>
-        </a>
-        <a class="carousel-control as-arrow right" href="#." data-target="next">
-          <span class="icon ion-ios7-arrow-right arrow-right"></span>
-        </a>
-      </div>
-    -->
-      <div class="as-indicators"></div>
     </div>
-  </div>
 </section>
-<!--/ End Home Section -->

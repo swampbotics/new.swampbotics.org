@@ -1,26 +1,27 @@
 {
-    "name": "Swampbotics",
-    "version": "0.1.0",
-    "description": "Swampbotics website",
-    "author": "Swampbotics <hello@swampbotics.org>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/swampbotics/swampbotics.org"
-    },
-    "bugs": {
-        "url": "https://github.com/swampbotics/swampbotics.org/issues"
-    },
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-contrib-sass": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-autoprefixer": "*"
-    },
-    "dependencies": {
-        "grunt": "^1.0.1",
-        "grunt-autoprefixer": "^3.0.4",
-        "grunt-contrib-sass": "^1.0.0",
-        "grunt-contrib-watch": "^1.0.0"
-    },
-    "license": "MIT"
+  "name": "Swampbotics",
+  "version": "0.1.0",
+  "description": "Swampbotics website",
+  "author": "Swampbotics <hello@swampbotics.org>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swampbotics/swampbotics.org"
+  },
+  "bugs": {
+    "url": "https://github.com/swampbotics/swampbotics.org/issues"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "^1.2.0"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "license": "MIT"
 }

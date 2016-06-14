@@ -1,22 +1,24 @@
 <!-- page-header -->
-<div style="background-image: url(assets/img/events/{year}/{slug}/main.jpg)" class="page-header half-height table overlay">
+<div style="background-image: url(season/{img-season}/{img-event}/main.jpg)" class="page-header half-height table overlay">
     <div class="table-cell">
         <div class="container">
             <div class="row font-second">
-                <div class="col-sm-8 page-header-title-left">
+                <div class="col-md-6 page-header-title-left">
                     <h1 class="hs-text-12 init-animation-4">{name}</h1>
                     <div class="hs-text-6 init-animation-4 delay0-2s">
                         {tagline}
                     </div>
                 </div>
                 <!--/ End col -->
-                <div class="col-sm-4">
+                <div class="col-md-6">
                     <ol class="breadcrumb  text-right">
                         <li class="init-animation-3 delay0-4s"><a class="animsition-link" href="/">Home</a>
                         </li>
                         <li class="init-animation-3 delay0-6s"><a class="animsition-link" href="events">Events</a>
                         </li>
-                        <li class="active init-animation-3 delay0-8s">{name}</li>
+                        <li class="init-animation-3 delay0-8s"><a class="animsition-link" href="events/{img-season}/">{season}</a>
+                        </li>
+                        <li class="active init-animation-3 delay1-0s">{name}</li>
                     </ol>
                 </div>
                 <!--/ End col -->
