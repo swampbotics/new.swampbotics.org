@@ -76,7 +76,7 @@ if (isset($_GET['season'])) {
             array('{post}', '{pics}'),
             array(
                 formatPost($event),
-                formatGallary( str_replace(' ', '-', strtolower($event['season'])). '/' . str_replace(' ', '-', strtolower($event['name'])) )
+                formatGallary(str_replace(' ', '-', strtolower($event['season'])). '/' . str_replace(' ', '-', strtolower($event['name'])))
             ),
             file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/post.html')
         );
