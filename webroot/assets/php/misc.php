@@ -16,7 +16,7 @@ function formatEvent($dataArr)
         $rank;
         $season = str_replace(' ', '-', strtolower($data['season']));
         $event = str_replace(' ', '-', strtolower($data['name']));
-        if(empty($robots)){
+        if (empty($robots)) {
             $ret .= '<div class="blog-item">
             <!-- Blog-item Header & Media-->
             <a class="blog-media animsition-link" href="events/'.$season.'/'.$event.'">
@@ -42,11 +42,11 @@ function formatEvent($dataArr)
             </div>
             </div>';
         } else {
-          foreach ($robots as $robot) :
+            foreach ($robots as $robot) :
               $number .= $robot['number'].' ';
-              $rank .= $robot['rank'].' ';
-          endforeach;
-          $ret .= '<div class="blog-item">
+            $rank .= $robot['rank'].' ';
+            endforeach;
+            $ret .= '<div class="blog-item">
           <!-- Blog-item Header & Media-->
           <a class="blog-media animsition-link" href="events/'.$season.'/'.$event.'">
               <img class="parallax-img img-responsive" src="season/'.$season.'/'.$event.'/main.jpg" alt="" data-center="transform: translate3d(0px, -50%, 0px)" data-top-bottom="transform: translate3d(0px, -10%, 0px)" data-bottom-top="transform: translate3d(0px, -90%, 0px)">
@@ -111,8 +111,8 @@ function formatEventIndex($dataArr)
 function formatPost($data)
 {
     $robots = json_decode($data['robots'], true);
-    if(empty($robots)){
-      $return = '<section class="blog-post">
+    if (empty($robots)) {
+        $return = '<section class="blog-post">
               <!-- Post Media -->
               <div id="images-slider-1" class="blog-item-slider owl-carousel carousel dots-under wow zoomIn animated">
                   {pics}
@@ -130,11 +130,11 @@ function formatPost($data)
               <!--/ End Post body text -->
           </section>';
     } else {
-      foreach ($robots as $robot) :
+        foreach ($robots as $robot) :
           $robotNum .= $robot['number'].' ';
-          $robotRank .= $robot['rank']. ' ';
-      endforeach;
-      $return = '<section class="blog-post">
+        $robotRank .= $robot['rank']. ' ';
+        endforeach;
+        $return = '<section class="blog-post">
               <!-- Post Media -->
               <div id="images-slider-1" class="blog-item-slider owl-carousel carousel dots-under wow zoomIn animated">
                   {pics}
