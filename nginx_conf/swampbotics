@@ -1,7 +1,7 @@
 
 server {
     listen 80;
-    server_name swampbotics.dev.mureedsultan.com;
+    server_name new.swampbotics.org;
     index index.php index.html;
     autoindex on;
     root "/var/www/swampbotics/";
@@ -18,9 +18,7 @@ server {
         if (-f $document_root$uri.php) {
             rewrite ^(.*)$ /$uri.php;
         }
-		rewrite ^/events/([^/]*)$ /events.php?year=$1 last;
-		rewrite ^/events/([^/]*)$ /events.php?year=$1 last;
-		rewrite ^/event/([^/]*)/([^/]*)$ /post.php?year=$1&post=$2 last;
+		    rewrite ^/events/([^/]*)/([^/]*)$ /events.php?season=$1&event=$2 last;
     }
 
     location ~ \.php$ {
