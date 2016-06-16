@@ -6,3 +6,4 @@ $CONFIG['database']['name'] = 'swampbotics';
 $CONFIG['database']['host'] = 'localhost';
 $CONFIG['database']['username'] = 'swampbotics';
 $CONFIG['database']['password'] = 'your-password-here';
+$CONFIG['season'] = 'Starstruck';
