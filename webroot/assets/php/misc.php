@@ -72,7 +72,7 @@ function formatEvent($dataArr)
         } else {
             foreach ($robots as $robot) :
                 $number .= $robot['number'].' ';
-                $rank .= $robot['rank'].' ';
+            $rank .= $robot['rank'].' ';
             endforeach;
             $ret .= '<div class="blog-item">
           <!-- Blog-item Header & Media-->
@@ -180,7 +180,7 @@ function formatPost($data)
     } else {
         foreach ($robots as $robot) :
             $robotNum .= $robot['number'].' ';
-            $robotRank .= $robot['rank']. ' ';
+        $robotRank .= $robot['rank']. ' ';
         endforeach;
         $return = '<section class="blog-post">
               <!-- Post Media -->
