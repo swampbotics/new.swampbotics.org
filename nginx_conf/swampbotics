@@ -18,7 +18,19 @@ server {
         if (-f $document_root$uri.php) {
             rewrite ^(.*)$ /$uri.php;
         }
-		    rewrite ^/events/([^/]*)/([^/]*)$ /events.php?season=$1&event=$2 last;
+		rewrite ^/events/([^/]*)/([^/]*)$ /events.php?season=$1&event=$2 last;
+    }
+
+    location /manage/ {
+        index home.php;
+        rewrite ^/manage/home/([^/]*)/([^/]*)$ /manage/home.php?season=$1&event=$2 last;
+        try_files $uri $uri/ @modx-rewrite =404;
+        if (-f $document_root$uri.html) {
+            rewrite ^(.*)$ /$uri.html;
+        }
+        if (-f $document_root$uri.php) {
+            rewrite ^(.*)$ /$uri.php;
+        }
     }
 
     location ~ \.php$ {

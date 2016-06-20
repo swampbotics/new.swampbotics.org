@@ -10,7 +10,7 @@ $thisPage->canonical = '';
 $date = date('Y-m-d');
 
 if (isset($_GET['season'])) {
-    /* ---------------------------------------------------- MULTIPLE EVENTS ----------------------------------------------------*/
+    /* ----------------------------------------------- MULTIPLE EVENTS -----------------------------------------------*/
     $thisPage->header = str_replace(
         '{season}',
         str_replace('-', ' ', $_GET['season']),
@@ -37,13 +37,13 @@ if (isset($_GET['season'])) {
         header("Location: /events/".$season."/");
     }
 
-    /* ---------------------------------------------------- SINGLE EVENT ----------------------------------------------------*/
+    /* ----------------------------------------------- SINGLE EVENT -----------------------------------------------*/
     if (isset($_GET['event']) && !empty($_GET['event'])) {
         /* ------------------- DB STUFF -------------------*/
         $event = $db->query(
             "SELECT * FROM events WHERE season=(?) AND name=(?) LIMIT 1",
             "ss",
-            str_replace('-', ' ', $_GET['season']),
+            $getSeason,
             str_replace('-', ' ', $_GET['event'])
         );
 
@@ -76,7 +76,13 @@ if (isset($_GET['season'])) {
             array('{post}', '{pics}'),
             array(
                 formatPost($event),
-                formatGallary(str_replace(' ', '-', strtolower($event['season'])). '/' . str_replace(' ', '-', strtolower($event['name'])))
+                formatGallary(
+                    str_replace(
+                        ' ',
+                        '-',
+                        strtolower($event['season'])
+                    ).'/' . str_replace(' ', '-', strtolower($event['name']))
+                )
             ),
             file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/post.html')
         );
