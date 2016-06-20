@@ -1,0 +1,89 @@
+<div class="section home">
+    <div class="container">
+        <div class="home-icon wow fadeInRight">
+            <i class="icon-scope"></i>
+        </div>
+        <div class="text-center wow fadeInLeft">
+            <div class="pagination">
+                <a>{season}</a>
+            </div>
+        </div>
+        <div class="events-list">
+            {events}
+            <div class="text-center margin-bottom-30">
+                <button class="btn btn-animated btn-contact ripple-alone btn-show-form" data-text="Add an event">Add an event</button>
+            </div>
+            <div class="row add-event-form">
+                <div class="col-md-offset-1 col-md-10">
+                    <form name="add-event-form" class="" method="post" action="/manage/home?type=add">
+                        <fieldset>
+                            <div class="row">
+                                <!-- ========================== FIELD: SEASON ========================== --->
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50">
+                                    <label class="input-label" for="season">
+                                        <span class="input-label-content font-second" data-content="season">season</span>
+                                    </label>
+                                    <input class="input-field" type="text" name="season" id="season" value="{form-season}" required="">
+                                </div>
+                                <!-- =========================== FIELD: NAME =========================== --->
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50">
+                                    <label class="input-label" for="name">
+                                        <span class="input-label-content font-second" data-content="name">name</span>
+                                    </label>
+                                    <input class="input-field" type="text" name="name" id="name" required="">
+                                </div>
+                                <!-- ========================== FIELD: TAGLINE ========================== --->
+                                <div class="input col-xs-12 col-sm-12 padding-bottom-xs-50 padding-bottom-50">
+                                    <label class="input-label" for="tagline">
+                                        <span class="input-label-content font-second" data-content="tagline">tagline</span>
+                                    </label>
+                                    <input class="input-field" type="text" name="tagline" id="tagline" required="">
+                                </div>
+                                <!-- =========================== FIELD: DATE =========================== --->
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-30">
+                                    <label class="input-label" for="date">
+                                        <span class="input-label-content font-second" data-content="date">date</span>
+                                    </label>
+                                    <input class="input-field" type="date" name="date" id="date" value="{form-cdate}" required="">
+                                </div>
+                                <!-- ======================= FIELD: RELEASE DATE ======================= --->
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
+                                    <label class="input-label" for="release_date">
+                                        <span class="input-label-content font-second" data-content="release date">release date</span>
+                                    </label>
+                                    <input class="input-field" type="date" name="release_date" id="release_date" value="{form-tdate}" required="">
+                                </div>
+                                <!-- =========================== FIELD: ROBOTS =========================== --->
+                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
+                                    <label class="textarea-label font-second" for="robots">robots (JSON)</label>
+                                    <textarea class="input-field textarea" name="robots" id="robots"></textarea>
+                                </div>
+                                <!-- ========================= FIELD: DESCRIPTION ========================= --->
+                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
+                                    <label class="textarea-label font-second" for="description">description</label>
+                                    <textarea class="input-field textarea" name="description" id="description" required=""></textarea>
+                                </div>
+                                <!-- =========================== FIELD: CONTENT =========================== --->
+                                <div class="message col-xs-12 col-sm-12 padding-bottom-xs-40 padding-bottom-30">
+                                    <label class="textarea-label font-second" for="content">content</label>
+                                    <textarea class="input-field textarea" name="content" id="content" required=""></textarea>
+                                </div>
+                            </div>
+                            <div id="form-messages" class="form-message"></div>
+                            <div class="col-xs-12 margin-top-30 text-center">
+                                <button type="submit" class="btn btn-animated btn-contact ripple-alone btn-add" data-text="Add"><span class="btn-icon">
+                                    <span class="loader-parent">
+                                            <span class="loader3"></span>
+                                        </span>
+                                    </span>
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!--/ End form -->
+                </div>
+                <!--/ .col -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,19 @@
+/*
+ *  ====================== IMPORTS ======================
+ */
 @import 'bourbon/bourbon'
+@import 'includes/headers'
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900%7COpen+Sans:300,400,600,700)
 
+/*
+ *  ====================== GLOBAL ======================
+ */
 .kaushan
     font-family: 'Kaushan Script'
 
+/*
+ *  ====================== FOOTER ======================
+ */
 .footer-bottom
     p
         display: block
@@ -16,11 +26,13 @@
         &:hover
             border-bottom: none
 
-
 .footer-logo
     width: 100%
     text-align: center
 
+/*
+ *  ====================== LOGO ANIMATION ======================
+ */
 .logo-hover
     height: 250px
     margin-bottom: 25px
@@ -55,3 +67,80 @@
     .logo-borders-outer
         +transform(rotate(0deg))
         +transition(all .5s ease-in-out)
+
+/*
+ *  ====================== SECTIONS ======================
+ */
+$color-success: #5cb85c
+$color-danger: #d9534f
+.section
+    &.login
+        .login-icon
+            margin: 0 auto
+            font-size: 80px
+            text-align: center
+            margin-bottom: 50px
+            i:before
+                content: "\e040"
+    &.home
+        .home-icon
+            margin: 0 auto
+            font-size: 80px
+            text-align: center
+            margin-bottom: 50px
+            i:before
+                content: "\e034"
+        .pagination
+            margin-bottom: 100px
+        .blog-item
+            margin-bottom: 100px
+            a
+                color: #0c0c17
+        .add-event-form
+            display: none
+            margin-top: 100px
+        .btn-add
+            background: $color-success
+            &:before
+                background: $color-success
+            &:after
+                background: $color-success
+    &.home-event
+        .home-event-icon
+            margin: 0 auto
+            font-size: 80px
+            text-align: center
+            margin-bottom: 50px
+            i:before
+                content: "\e034"
+        .btn-delete
+            margin: 15px
+            background: $color-danger
+            &:before
+                background: $color-danger
+            &:after
+                background: $color-danger
+        .btn-update
+            margin: 15px
+            background: $color-success
+            &:before
+                background: $color-success
+            &:after
+                background: $color-success
+        .form-title
+            margin-bottom: 100px
+            h1
+                text-transform: uppercase
+                margin-top: 2.5px
+                margin-bottom: 2.5px
+                letter-spacing: 2.5px
+                font-weight: 500
+            h5
+                text-transform: uppercase
+                margin-top: 0px
+                letter-spacing: 2px
+                font-weight: 300
+            h6
+                margin: 0px
+                letter-spacing: 2px
+                font-weight: 300
