@@ -6,8 +6,8 @@ function manageEvents($array)
     $ret = '';
     foreach ($array as $key => $event) {
         $ret .= '
-        <div class="blog-item wow fadeInUp" data-wow-delay="'.($key*0.4).'s">
-            <a href="/manage/home/'
+        <div class="blog-item wow fadeInLeft" data-wow-delay="'.($key*0.4).'s">
+            <a href="/manage/'
             .str_replace(' ', '-', strtolower($event['season'])).'/'.str_replace(' ', '-', strtolower($event['name'])).
             '" class="animsition-link" data-animsition-out="fade-out-up-sm" data-animsition-out-duration="500">
                 <div class="row blog-item-title-wrapper">
@@ -72,7 +72,7 @@ function formatEvent($dataArr)
         } else {
             foreach ($robots as $robot) :
                 $number .= $robot['number'].' ';
-            $rank .= $robot['rank'].' ';
+                $rank .= $robot['rank'].' ';
             endforeach;
             $ret .= '<div class="blog-item">
           <!-- Blog-item Header & Media-->
@@ -180,7 +180,7 @@ function formatPost($data)
     } else {
         foreach ($robots as $robot) :
             $robotNum .= $robot['number'].' ';
-        $robotRank .= $robot['rank']. ' ';
+            $robotRank .= $robot['rank']. ' ';
         endforeach;
         $return = '<section class="blog-post">
               <!-- Post Media -->
