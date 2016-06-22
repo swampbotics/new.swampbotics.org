@@ -8,7 +8,7 @@
  */
 function session_startsecure($expires = 604800) // cookie expires in one week
 {
-    if ($_SERVER["SERVER_NAME"] === "swampbotics.org") {
+    if ($_SERVER["SERVER_NAME"] === "new.swampbotics.org") {
         // sets cookie lifetime to browser session, '/' path, current host (so it will work on staging), HTTPS only
         // Arguably this should be set in the actual INI file, but this ensures that they actually are set.
         session_name('session');
@@ -18,7 +18,7 @@ function session_startsecure($expires = 604800) // cookie expires in one week
         ini_set('session.hash_bits_per_character', 5);
         ini_set('session.entropy_file', '/dev/urandom');
         ini_set('session.entropy_length', '512');
-        session_set_cookie_params($expires, '/', '.swampbotics.org', true, true);
+        session_set_cookie_params($expires, '/', 'new.swampbotics.org', true, true);
     }
     session_start();
 }
