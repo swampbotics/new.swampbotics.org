@@ -1,73 +1,74 @@
+{nav}
 <div class="section home-event">
     <div class="container">
-        <div class="home-event-icon wow fadeInDown">
+        <div class="page-icon wow fadeInDown">
             <i class="icon-scope"></i>
         </div>
         <div class="form-wrapper">
-            <div class="text-center form-title">
+            <div class="text-center form-title wow fadeInUp">
                 <h6>ID: {event-id}</h6>
                 <h1 class="event-name">{event-name}</h1>
                 <h5 class="event-season">{event-season}</h5>
             </div>
             <div class="row">
-                <div class="col-md-offset-1 col-md-10">
+                <div class="col-md-offset-1 col-md-10 wow fadeInLeft">
                     <form name="event-form" class="" method="post" action="/manage/home?type=update">
                         <input type="hidden" name="id" value="{event-id}">
                         <fieldset>
                             <div class="row">
                                 <!-- ========================== FIELD: SEASON ========================== --->
-                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50 wow fadeInLeft" data-wow-delay=".4s">
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50">
                                     <label class="input-label" for="season">
                                         <span class="input-label-content font-second" data-content="season">season</span>
                                     </label>
                                     <input class="input-field" type="text" name="season" id="season" value="{event-season}" required="">
                                 </div>
                                 <!-- =========================== FIELD: NAME =========================== --->
-                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50 wow fadeInRight" data-wow-delay=".4s">
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-50">
                                     <label class="input-label" for="name">
                                         <span class="input-label-content font-second" data-content="name">name</span>
                                     </label>
                                     <input class="input-field" type="text" name="name" id="name" value="{event-name}" required="">
                                 </div>
                                 <!-- ========================== FIELD: TAGLINE ========================== --->
-                                <div class="input col-xs-12 col-sm-12 padding-bottom-xs-50 padding-bottom-50 wow fadeInUp" data-wow-delay=".8s">
+                                <div class="input col-xs-12 col-sm-12 padding-bottom-xs-50 padding-bottom-50">
                                     <label class="input-label" for="tagline">
                                         <span class="input-label-content font-second" data-content="tagline">tagline</span>
                                     </label>
                                     <input class="input-field" type="text" name="tagline" id="tagline" value="{event-tagline}" required="">
                                 </div>
                                 <!-- =========================== FIELD: DATE =========================== --->
-                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-30 wow fadeInLeft" data-wow-delay="1.2s">
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-50 padding-bottom-30">
                                     <label class="input-label" for="date">
                                         <span class="input-label-content font-second" data-content="date">date</span>
                                     </label>
                                     <input class="input-field" type="date" name="date" id="date" value="{event-date}" required="">
                                 </div>
                                 <!-- ======================= FIELD: RELEASE DATE ======================= --->
-                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30 wow fadeInRight" data-wow-delay="1.2s">
+                                <div class="input col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
                                     <label class="input-label" for="release_date">
                                         <span class="input-label-content font-second" data-content="release date">release date</span>
                                     </label>
                                     <input class="input-field" type="date" name="release_date" id="release_date" value="{event-release-date}" required="">
                                 </div>
                                 <!-- =========================== FIELD: ROBOTS =========================== --->
-                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30 wow fadeInLeft" data-wow-delay="1.4s">
+                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
                                     <label class="textarea-label font-second" for="robots">robots (JSON)</label>
                                     <textarea class="input-field textarea" name="robots" id="robots">{event-robots}</textarea>
                                 </div>
                                 <!-- ========================= FIELD: DESCRIPTION ========================= --->
-                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30 wow fadeInRight" data-wow-delay="1.4s">
+                                <div class="message col-xs-12 col-sm-6 padding-bottom-xs-30 padding-bottom-30">
                                     <label class="textarea-label font-second" for="description">description</label>
                                     <textarea class="input-field textarea" name="description" id="description"  required="">{event-description}</textarea>
                                 </div>
                                 <!-- =========================== FIELD: CONTENT =========================== --->
-                                <div class="message col-xs-12 col-sm-12 padding-bottom-xs-40 padding-bottom-30 wow fadeInUp" data-wow-delay="1.6s">
-                                    <label class="textarea-label font-second" for="content">content</label>
+                                <div class="message col-xs-12 col-sm-12 padding-bottom-xs-40 padding-bottom-30">
+                                    <label class="textarea-label font-second" for="content">content (HTML)</label>
                                     <textarea class="input-field textarea" name="content" id="content"  required="">{event-content}</textarea>
                                 </div>
                             </div>
                             <div id="form-messages" class="form-message"></div>
-                            <div class="col-xs-12 margin-top-30 text-center wow fadeIn" data-wow-delay="1.8s">
+                            <div class="col-xs-12 margin-top-30 text-center">
                                 <button class="btn btn-animated btn-contact ripple-alone btn-back" data-text="Back">Back</button>
                                 <button type="submit" class="btn btn-animated btn-contact ripple-alone btn-update" data-text="Update">
                                     <span class="btn-icon">
