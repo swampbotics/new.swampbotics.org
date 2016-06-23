@@ -58,6 +58,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $return['type'] = 'success';
             $return['text'] = 'Successfully logged in!';
             $_SESSION['userid'] = $user[0]['id'];
+            $db->query('UPDATE users SET password_expires=(?) WHERE id=(?)', 'ii', time(), $user[0]['id']);
         }
         echo json_encode($return);
 
