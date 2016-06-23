@@ -64,7 +64,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     default:
         /* ------------------- FIX SEASON -------------------*/
         if (!isset($_GET['season'])) {
-            header('Location: /manage/home/'.strtolower($CONFIG['season']).'/');
+            header('Location: /manage/'.strtolower($CONFIG['season']).'/');
         }
 
         /* ------------------- DB STUFF -------------------*/
@@ -79,7 +79,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         /* ------------------- BAD SEASON -------------------*/
         if (empty($events)) {
             $season = str_replace(' ', '-', strtolower($CONFIG['season']));
-            header("Location: /manage/home/".$season."/");
+            header("Location: /manage/".$season."/");
         }
 
         $thisPage = new Page();
@@ -99,7 +99,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             /* ------------------- BAD EVENT -------------------*/
             if (empty($event)) {
                 $season = str_replace(' ', '-', strtolower($CONFIG['season']));
-                header("Location: /manage/home/".$season."/");
+                header("Location: /manage/".$season."/");
             }
 
             /* ------------------- RENDER EVENT PAGE -------------------*/

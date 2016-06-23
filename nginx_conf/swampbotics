@@ -1,3 +1,5 @@
+# Quick side note while I'm here: we don't use this configuration in production.
+# It's mostly so we can manually sync up rewrite rules.
 
 server {
     listen 80;
@@ -22,8 +24,8 @@ server {
     }
 
     location /manage/ {
-        index home.php;
-        rewrite ^/manage/home/([^/]*)/([^/]*)$ /manage/home.php?season=$1&event=$2 last;
+        index index.php;
+        rewrite ^/manage/([^/]*)/([^/]*)$ /manage/index.php?season=$1&event=$2 last;
         try_files $uri $uri/ @modx-rewrite =404;
         if (-f $document_root$uri.html) {
             rewrite ^(.*)$ /$uri.html;

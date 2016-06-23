@@ -17,7 +17,7 @@ $('form[name=event-form]').submit(function(e) {
     var formMessage = $(this).find('.form-message');
     button.addClass('btn-loading');
     formMessage.fadeOut().empty().removeClass('error success');
-    $.post('manage/home?type=update', postData, "json")
+    $.post('manage/index.php?type=update', postData, "json")
         .done(function(data) {
             formMessage.addClass(data.type).append(data.text).fadeIn();
             button.removeClass('btn-loading');
@@ -37,7 +37,7 @@ $('.btn-delete').click(function(e){
         var postData = $('form[name=event-form]').serialize();
         var formMessage = $('form[name=event-form]').find('.form-message');
         formMessage.fadeOut().empty().removeClass('error success');
-        $.post('manage/home?type=delete', postData, "json")
+        $.post('manage/index.php?type=delete', postData, "json")
             .done(function(data) {
                 formMessage.addClass(data.type).append(data.text).fadeIn();
                 $('.btn-delete').removeClass('btn-loading');
@@ -69,7 +69,7 @@ $('form[name=add-event-form]').submit(function(e) {
     formMessage.fadeOut().empty().removeClass('error success');
     var result = window.confirm('Are you sure you want to add this event?');
     if(result){
-        $.post('manage/home?type=add', postData, "json")
+        $.post('manage/index.php?type=add', postData, "json")
             .done(function(data) {
                 formMessage.addClass(data.type).append(data.text).fadeIn();
                 button.removeClass('btn-loading');
@@ -111,7 +111,7 @@ $('form[name=login-form]').submit(function(e) {
                 $('.form-message').empty().removeClass('error success').addClass(data.type).append(data.text);
                 if (data.type == "success") {
                     setTimeout(function() {
-                        window.location.replace("/manage/home");
+                        window.location.replace("/manage/");
                     }, 1000);
                 }
             });
