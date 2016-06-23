@@ -74,22 +74,36 @@
 $color-success: #5cb85c
 $color-danger: #d9534f
 .section
+    .form-title
+        h1
+            text-transform: uppercase
+            margin-top: 2.5px
+            margin-bottom: 2.5px
+            letter-spacing: 2.5px
+            font-weight: 500
+        h5
+            text-transform: uppercase
+            margin-top: 0px
+            letter-spacing: 2px
+            font-weight: 300
+        h6
+            margin: 0px
+            letter-spacing: 2px
+            font-weight: 300
+            text-transform: uppercase
+    .page-icon
+        margin: 0 auto
+        font-size: 80px
+        text-align: center
+        margin-bottom: 50px
+
     &.login
-        .login-icon
-            margin: 0 auto
-            font-size: 80px
-            text-align: center
-            margin-bottom: 50px
-            i:before
-                content: "\e040"
+        .page-icon i:before
+            content: "\e040"
+
     &.home
-        .home-icon
-            margin: 0 auto
-            font-size: 80px
-            text-align: center
-            margin-bottom: 50px
-            i:before
-                content: "\e034"
+        .page-icon i:before
+            content: "\e034"
         .pagination
             margin-bottom: 100px
         .blog-item
@@ -105,14 +119,16 @@ $color-danger: #d9534f
                 background: $color-success
             &:after
                 background: $color-success
+        .form-title
+            margin-bottom: 30px
+            h6:nth-child(2)
+                margin: 0px
+                letter-spacing: 2px
+                font-weight: 300
+
     &.home-event
-        .home-event-icon
-            margin: 0 auto
-            font-size: 80px
-            text-align: center
-            margin-bottom: 50px
-            i:before
-                content: "\e034"
+        .page-icon i:before
+            content: "\e032"
         .btn-delete
             margin: 15px
             background: $color-danger
@@ -120,6 +136,8 @@ $color-danger: #d9534f
                 background: $color-danger
             &:after
                 background: $color-danger
+        .btn-back
+            margin: 15px
         .btn-update
             margin: 15px
             background: $color-success
@@ -129,18 +147,3 @@ $color-danger: #d9534f
                 background: $color-success
         .form-title
             margin-bottom: 100px
-            h1
-                text-transform: uppercase
-                margin-top: 2.5px
-                margin-bottom: 2.5px
-                letter-spacing: 2.5px
-                font-weight: 500
-            h5
-                text-transform: uppercase
-                margin-top: 0px
-                letter-spacing: 2px
-                font-weight: 300
-            h6
-                margin: 0px
-                letter-spacing: 2px
-                font-weight: 300

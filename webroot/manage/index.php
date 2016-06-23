@@ -141,7 +141,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             );
         } else {
             /* ------------------- RENDER EVENTS PAGE -------------------*/
-            $thisPage->title = $autoTitle;
+            $thisPage->title = 'Home';
             $thisPage->meta = '';
             $thisPage->header = str_replace(
                 array(
@@ -170,6 +170,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/manage/home.html')
             );
         }
-
+        $user = $db->query('SELECT name, email FROM users WHERE id=(?)', 'i', $_SESSION['userid']);
+        $thisPage->content = str_replace(
+            array(
+                '{nav}',
+                '{user-name}',
+                '{user-email}'
+            ),
+            array(
+                file_get_contents($_SERVER['DOCUMENT_ROOT'].'/assets/html/pages/manage/nav.html'),
+                $user[0]['name'],
+                $user[0]['email']
+            ),
+            $thisPage->content
+        );
         $thisPage->output();
 }
